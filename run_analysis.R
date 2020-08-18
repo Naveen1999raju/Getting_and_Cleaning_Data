@@ -60,7 +60,6 @@ View(activityType)
 sub_table <- cbind(ybind, subbind,xbind)
 View(sub_table)
 Mean <-aggregate(. ~subjectId + activityType, sub_table, mean)
-Mean <-Mean[order(Mean$subjectId,Mean$activityType),]
 View(Mean)
 write.table(Mean, file = "../Getting_and_Cleaning_Data/tidydata.txt",row.name = FALSE)
 View(read.table("../Getting_and_Cleaning_Data/tidydata.txt",header = TRUE,stringsAsFactors = FALSE))
